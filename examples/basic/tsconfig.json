@@ -17,27 +17,15 @@
     "emitDecoratorMetadata": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "baseUrl": ".",
-    "typeRoots": [
-      "node_modules/@types",
-      "./typings"
-    ],
+    "typeRoots": ["node_modules/@types", "./typings"],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": [
-    "./pages/**/*",
-    "./src/**/*",
-    "./ui/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./pages/**/*", "./src/**/*", "./ui/**/*"],
+  "exclude": ["node_modules"]
 }

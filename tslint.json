@@ -2,9 +2,7 @@
   "extends": ["tslint:latest", "tslint-config-prettier"],
   "rules": {
     "no-implicit-dependencies": {
-      "options": [
-        "dev"
-      ]
+      "options": ["dev"]
     },
     "interface-name": false,
     "only-arrow-functions": false,

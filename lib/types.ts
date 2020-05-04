@@ -9,9 +9,7 @@ export type Renderer<DataType extends unknown = ParsedUrlQuery> = (
   params?: DataType,
 ) => Promise<void>;
 
-export interface RenderableResponse<
-  DataType extends unknown = ParsedUrlQuery
-> {
+export interface RenderableResponse<DataType extends unknown = ParsedUrlQuery> {
   render(view: string, data?: DataType): ReturnType<Renderer<DataType>>;
 }
 

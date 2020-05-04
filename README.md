@@ -6,21 +6,21 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [Installation](#installation)
-* [Usage](#usage)
-  * [Import and register the RenderModule](#import-and-register-the-rendermodule)
-  * [Default Settings](#default-settings)
-  * [Rendering Pages](#rendering-pages)
-  * [Handling Errors](#handling-errors)
-    * [Custom error handler](#custom-error-handler)
-    * [Error Flow (Diagram)](#error-flow-diagram)
-* [Examples folder structure](#examples-folder-structure)
-  * [Basic Setup](#basic-setup)
-  * [Monorepo](#monorepo)
-* [Configuring Next](#configuring-next)
-* [tsconfig.json](#tsconfigjson)
-* [Versioning](#versioning)
-* [By Example](#by-example)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Import and register the RenderModule](#import-and-register-the-rendermodule)
+  - [Default Settings](#default-settings)
+  - [Rendering Pages](#rendering-pages)
+  - [Handling Errors](#handling-errors)
+    - [Custom error handler](#custom-error-handler)
+    - [Error Flow (Diagram)](#error-flow-diagram)
+- [Examples folder structure](#examples-folder-structure)
+  - [Basic Setup](#basic-setup)
+  - [Monorepo](#monorepo)
+- [Configuring Next](#configuring-next)
+- [tsconfig.json](#tsconfigjson)
+- [Versioning](#versioning)
+- [By Example](#by-example)
 
 <!-- vim-markdown-toc -->
 
@@ -28,9 +28,7 @@
 
 ## Installation
 
-
     yarn add nest-next
-
 
 ## Usage
 
@@ -83,15 +81,10 @@ the Render decorator from `@nestjs/common` and add it to the method that will re
 path for the page is relative to the `/pages` directory.
 
 ```typescript
-import {
-  Controller,
-  Get,
-  Render,
-} from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-
   @Get()
   @Render('Index')
   public index() {
@@ -105,11 +98,9 @@ export class AppController {
 
 Additionally, the render function is made available on the res object.
 
-
 ```typescript
 @Controller()
 export class AppController {
-
   @Get()
   public index(@Res() res: RenderableResponse) {
     res.render('Index', {
@@ -122,7 +113,7 @@ export class AppController {
 The render function takes in the view, as well as the initial props passed to the page.
 
 ```typescript
-render = (view: string, initialProps?: any) => any
+render = (view: string, initialProps?: any) => any;
 ```
 
 ### Handling Errors
@@ -177,6 +168,7 @@ _The image is linked to a larger version_
 [![error filter sequence diagram](./docs/out/error-filter-sequence-sm.png)](./docs/out/error-filter-sequence.png)
 
 ## Examples folder structure
+
 ### Basic Setup
 
 Next renders pages from the pages directory. The Nest source code can remain in the default `/src` folder
@@ -195,7 +187,6 @@ Next renders pages from the pages directory. The Nest source code can remain in 
     nodemon.json
     tsconfig.json
     tsconfig.server.json
-
 
 ### Monorepo
 
@@ -223,7 +214,7 @@ outside of both projects. Changes in it during "dev" runs trigger recompilation 
         /AboutPage.ts
         /IndexPage.ts
       package.json
-      
+
 
 To run this project, the "ui" and "server" project must be built, in any order. The "dto" project will be implicitly built by the "server" project. After both of those builds, the "server" project can be started in either dev or production mode.
 
@@ -249,4 +240,3 @@ The major version of `nest-next` corresponds to the major version of `next`.
 ## By Example
 
 Fully setup projects can be viewed in the [examples folder](/examples)
-

@@ -12,9 +12,7 @@
     "incremental": true,
     "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
     "rootDir": "./src",
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["node_modules", "./dist"],
   "include": ["./src/**/*.ts"],

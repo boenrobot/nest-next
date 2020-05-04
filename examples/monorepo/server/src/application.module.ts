@@ -13,8 +13,8 @@ import { AppController } from './app.controller';
         dir: resolve(__dirname, '../../ui'),
       }),
       {
-        viewsDir: ''
-      }
+        viewsDir: '',
+      },
     ),
   ],
 })
